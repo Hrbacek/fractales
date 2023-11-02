@@ -1,6 +1,6 @@
 """TDD practice for rewriting systems"""
 import unittest
-from l_systems.src.main import rewrite
+from src.fractal_gen import _rewrite
 
 class rewritingTest(unittest.TestCase):
     """TDD practice for rewriting systems"""
@@ -9,14 +9,14 @@ class rewritingTest(unittest.TestCase):
         """
         rules = {"X": "X"}
         string = "X"
-        assert rewrite(string=string, rules=rules, times=1) == "X"
+        assert _rewrite(string=string, rules=rules, times=1) == "X"
 
     def test_rewriteSimbolOneTime(self):
         """Test
         """
         rules = {"X": "X-X"}
         string = "XX"
-        r = rewrite(
+        r = _rewrite(
             string=string,
             rules=rules,
             times=1
@@ -28,7 +28,7 @@ class rewritingTest(unittest.TestCase):
         """
         rules = {"X": "X-X"}
         string = "XX"
-        r = rewrite(
+        r = _rewrite(
             string=string,
             rules=rules,
             times=2
@@ -40,7 +40,7 @@ class rewritingTest(unittest.TestCase):
         """
         rules = {"X": "X-X", "G": "G+X"}
         string = "XG"
-        r = rewrite(
+        r = _rewrite(
             string=string,
             rules=rules,
             times=1
@@ -52,7 +52,7 @@ class rewritingTest(unittest.TestCase):
         """
         rules = {"X": "X-X", "G": "G+X"}
         string = "GXG"
-        r = rewrite(
+        r = _rewrite(
             string=string,
             rules=rules,
             times=1
@@ -64,7 +64,7 @@ class rewritingTest(unittest.TestCase):
         """
         rules = {"X": "X-X", "G": "G+X"}
         string = "XG"
-        r = rewrite(
+        r = _rewrite(
             string=string,
             rules=rules,
             times=2
@@ -76,7 +76,7 @@ class rewritingTest(unittest.TestCase):
         """
         rules = {"X": "X-G", "G": "G+X"}
         string = "GXG"
-        r = rewrite(
+        r = _rewrite(
             string=string,
             rules=rules,
             times=2
@@ -88,7 +88,7 @@ class rewritingTest(unittest.TestCase):
         """
         rules = {"A": "Ba", "B": "bA", "a": "A", "b": "B"}
         string = "A"
-        r = rewrite(
+        r = _rewrite(
             string=string,
             rules=rules,
             times=1
@@ -100,7 +100,7 @@ class rewritingTest(unittest.TestCase):
         """
         rules = {"A": "Ba", "B": "bA", "a": "A", "b": "B"}
         string = "A"
-        r = rewrite(
+        r = _rewrite(
             string=string,
             rules=rules,
             times=2
@@ -112,7 +112,7 @@ class rewritingTest(unittest.TestCase):
         """
         rules = {"A": "Ba", "B": "bA", "a": "A", "b": "B"}
         string = "A"
-        r = rewrite(
+        r = _rewrite(
             string=string,
             rules=rules,
             times=4
